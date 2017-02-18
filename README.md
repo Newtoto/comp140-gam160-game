@@ -7,4 +7,4 @@ Repository for Assignment 1 of COMP140-GAM160
 **Rotate Turrets:** To change path of laser beams and cross them over attack points.
 <br>
 <br>
-**Move Mirrors, Black Holes, and Prisms:** To bounce, transport, and split lasers respectively in order to aid mission completion.<br><br><h2>Image of turret, mirror, targets, and black hole mechanics</h2>https://raw.githubusercontent.com/Newtoto/comp140-gam160-game/master/IMG_20170217_131916974.jpg
+**Move Mirrors, Black Holes, and Prisms:** To bounce, transport, and split lasers respectively in order to aid mission completion.<br><br><h2>Image of turret, mirror, targets, and black hole mechanics</h2><img src="https://raw.githubusercontent.com/Newtoto/comp140-gam160-game/master/IMG_20170217_131916974.jpg">
