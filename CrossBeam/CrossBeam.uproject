@@ -1,8 +1,18 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.12",
+	"EngineAssociation": "{BDF71EEF-43C2-8643-B28C-68A90475A167}",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "CrossBeam",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "Paper2D",
