@@ -49,7 +49,13 @@ public:
 
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
+	UFUNCTION(BlueprintPure, Category = "Arduino")
+	int ArduinoRead();
 
+protected:
+
+
+	int ArduinoInput;
 
 	
 };

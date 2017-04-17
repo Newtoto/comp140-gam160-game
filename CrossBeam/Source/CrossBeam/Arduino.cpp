@@ -11,7 +11,7 @@ AArduino::AArduino()
 	PrimaryActorTick.bCanEverTick = true;
 
 	// connect to port using wide character string 'L'
-	this->connect(L"COM7");
+	this->connect(L"COM3");
 
 	// check connection
 	if (this->IsConnected()) UE_LOG(LogTemp, Warning, TEXT("Connection Success"));
@@ -146,7 +146,8 @@ void AArduino::Tick( float DeltaTime )
 		// convert string so it is compatible with Unreal
 		FString str = FString(ANSI_TO_TCHAR(incomingData));
 
-		// Parse here
+		// parse here
+		ArduinoInput = incomingData[readResult];
 
 		// output data to console
 		UE_LOG(LogTemp, Warning, TEXT("%s\n"), *str);
@@ -164,6 +165,11 @@ bool AArduino::IsConnected()
 {
 	//Simply return the connection status
 	return this->connected;
+}
+
+int AArduino::ArduinoRead()
+{
+	return this->ArduinoInput;
 }
 
 void AArduino::EndPlay(const EEndPlayReason::Type EndPlayReason) {
