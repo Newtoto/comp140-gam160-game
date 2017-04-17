@@ -144,13 +144,12 @@ void AArduino::Tick( float DeltaTime )
 		readResult = this->ReadData(incomingData, dataLength);
 
 		// convert string so it is compatible with Unreal
-		FString str = FString(ANSI_TO_TCHAR(incomingData));
+		inputStr = FString(ANSI_TO_TCHAR(incomingData));
 
 		// parse here
-		ArduinoInput = incomingData[readResult];
 
 		// output data to console
-		UE_LOG(LogTemp, Warning, TEXT("%s\n"), *str);
+		//UE_LOG(LogTemp, Warning, TEXT("%s\n"), *str);
 
 		// clear the data ready for the next tick
 		incomingData[readResult] = 0;
@@ -165,11 +164,6 @@ bool AArduino::IsConnected()
 {
 	//Simply return the connection status
 	return this->connected;
-}
-
-int AArduino::ArduinoRead()
-{
-	return this->ArduinoInput;
 }
 
 void AArduino::EndPlay(const EEndPlayReason::Type EndPlayReason) {
