@@ -52,5 +52,4 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Arduino")
 	FString inputStr;
 
-	
 };

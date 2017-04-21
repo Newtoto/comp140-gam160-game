@@ -145,8 +145,7 @@ void AArduino::Tick( float DeltaTime )
 
 		// convert string so it is compatible with Unreal
 		inputStr = FString(ANSI_TO_TCHAR(incomingData));
-
-		// parse here
+		
 
 		// output data to console
 		//UE_LOG(LogTemp, Warning, TEXT("%s\n"), *str);
