@@ -1,6 +1,6 @@
 const int turretPower[] = {13, 12};
 const int turretInput[] = {A0, A1};
-const int buttonPin = 3;
+const int buttonPin = 2;
 int buttonState = 0;
 String outputValues[] = {"", "", "", ""};
 String output;
@@ -32,10 +32,17 @@ void loop()
     {
     int turretValue = ((analogRead(turretInput[i])- 512)/-6);
     int turretValueLength = (String(turretValue).length());
-  
-    outputValues[i] = String(turretValueLength) + 
-    ":" + turretValue;
-  
+
+    if (i == 0)
+    {
+      outputValues[i] = "0:" + String(turretValueLength) + 
+      ":" + turretValue;
+    }
+    else
+    {
+      outputValues[i] = "1:" + String(turretValueLength) + 
+      ":" + turretValue;
+    }
     output = output + outputValues[i] + ",";
     }
 
@@ -43,6 +50,7 @@ void loop()
   if (buttonState == HIGH)
     {
       output = "F";
+      delayTime = 200;
     }
 
   Serial.println(output);
@@ -51,4 +59,5 @@ void loop()
 
   //reset output and delay for next run
   output = "";
+  delayTime = 30;
 }
